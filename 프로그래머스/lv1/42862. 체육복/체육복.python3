@@ -1,0 +1,20 @@
+def solution(n, lost, reserve):
+    lost.sort()
+    reserve.sort()
+    lost_person_list = []
+    for lost_person in lost:
+        if lost_person in reserve:
+            reserve.remove(lost_person)
+            continue
+        if lost_person not in reserve:
+            lost_person_list.append(lost_person)
+    
+    for reserve_person in reserve:
+        if reserve_person - 1 in lost_person_list:
+            lost_person_list.remove(reserve_person-1)
+            continue
+        if reserve_person + 1 in lost_person_list:
+            lost_person_list.remove(reserve_person+1)
+    
+
+    return n - len(lost_person_list)
