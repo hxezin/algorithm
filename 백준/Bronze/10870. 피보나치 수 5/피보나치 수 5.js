@@ -1,12 +1,4 @@
-let fs = require("fs");
-
-// 백준 제출할 때 주석 제거
-const readFileSyncAddress = '/dev/stdin';
-
-// VSC 테스트할 때 주석 제거
-// const readFileSyncAddress = "example.txt";
-
-let input = fs.readFileSync(readFileSyncAddress).toString().split("\n");
+let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
 let n = parseInt(input[0]);
 
 function fibonacci(n) {
