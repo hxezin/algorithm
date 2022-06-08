@@ -1,0 +1,19 @@
+import sys
+
+sys.setrecursionlimit(10**6)
+    
+memoization = [-1] * 100001
+
+def solution(n):
+    
+    if memoization[n] > 0:
+        return memoization[n]
+    
+    if n == 0:
+        return 0
+    if n <= 2:
+        return 1
+    
+    memoization[n] = (solution(n-1) + solution(n-2)) % 1234567
+    
+    return memoization[n]
