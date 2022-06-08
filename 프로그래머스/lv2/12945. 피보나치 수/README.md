@@ -1,10 +1,10 @@
 # [level 2] 피보나치 수 - 12945 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/12945?language=python3) 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/12945?language=javascript) 
 
 ### 성능 요약
 
-메모리: 89.1 MB, 시간: 88.05 ms
+메모리: 32.7 MB, 시간: 2.27 ms
 
 ### 구분
 
