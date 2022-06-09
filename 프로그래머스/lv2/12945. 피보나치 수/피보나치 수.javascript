@@ -5,8 +5,8 @@ function solution(n) {
     let c = a+b;
     
     for (let i=2; i<n; i++) {
-        a = b % 1234567;
-        b = c % 1234567;
+        a = b
+        b = c 
         c = (a + b) % 1234567;
     }
     
