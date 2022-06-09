@@ -1,5 +1,4 @@
 let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
-let [N, M] = [+input[0], +input[2]];
 let card1 = input[1]
   .split(" ")
   .map(Number)
