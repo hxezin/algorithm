@@ -1,20 +1,20 @@
-let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
+let input = require("fs").readFileSync("/dev/stdin").toString();
 
 function solution(input) {
-  let result = BigInt(input);
+  let num = BigInt(input);
   let start = BigInt(1);
-  let end = BigInt(input);
+  let end = BigInt(num);
 
   while (start <= end) {
     let mid = (start + end) / 2n;
 
-    if (mid ** 2n > result) {
+    if (mid ** 2n > num) {
       end = mid - 1n;
-    } else if (mid ** 2n < result) {
+    } else if (mid ** 2n < num) {
       start = mid + 1n;
     } else {
       return mid;
     }
   }
 }
-console.log(solution(input[0]) + "");
+console.log(solution(input) + "");
