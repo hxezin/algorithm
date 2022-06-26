@@ -4,8 +4,7 @@ const input = require("fs")
   .split("\n")
   .map(Number);
 
-let stack = [...input];
-stack = stack.slice(1);
+let stack = input.slice(1);
 let currentMin = 0;
 let count = 0;
 
