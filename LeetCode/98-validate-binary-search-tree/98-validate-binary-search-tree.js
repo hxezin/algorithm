@@ -12,16 +12,16 @@
  */
 var isValidBST = function(root) {
     
-    let data = [];
+    let data = []
     
-    let traverse = (node) => {
-        if(node.left) traverse(node.left)
+    let helper = (node) => {
+        if(node.left) helper(node.left)
         data.push(node.val)
-        if(node.right) traverse(node.right)
+        if(node.right) helper(node.right)
     }
     
-    traverse(root)
-
+    helper(root)
+    
     for(let i = 0; i < data.length; i++){
         if(data[i] >= data[i+1]){
             return false;
