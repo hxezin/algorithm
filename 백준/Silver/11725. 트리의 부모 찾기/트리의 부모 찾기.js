@@ -21,14 +21,14 @@ parents[1] = 0;
 let queue = [];
 queue.push(1);
 
-while (queue.length) {
-  let curNode = queue.shift();
+const dfs = (graph, parents, curNode) => {
   for (let nextNode of graph[curNode]) {
     if (parents[nextNode] === -1) {
       parents[nextNode] = curNode;
-      queue.push(nextNode);
+      dfs(graph, parents, nextNode);
     }
   }
-}
+};
 
+dfs(graph, parents, 1);
 console.log(parents.slice(2).join("\n"));
