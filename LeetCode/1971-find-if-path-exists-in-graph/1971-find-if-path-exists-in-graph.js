@@ -15,7 +15,6 @@ var validPath = function(n, edges, source, destination) {
     
     const visited = Array(n).fill(0)
     
-    const temp = []
     const queue = [];
     queue.push(source)
     
@@ -26,7 +25,6 @@ var validPath = function(n, edges, source, destination) {
         if(visited[curNode] === 1) continue;
         
         visited[curNode] = 1;
-        temp.push(curNode)
         
         graph[curNode].forEach(nextNode => {
             queue.push(nextNode)
