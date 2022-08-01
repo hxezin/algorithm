@@ -4,7 +4,7 @@
  */
 var findCenter = function(edges) {
     
-    const graph = Array(100001).fill(0)
+    const graph = Array(edges.length + 2).fill(0)
     
     edges.forEach(el => {
         graph[el[0]]++;
