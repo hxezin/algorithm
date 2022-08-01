@@ -22,6 +22,7 @@ var validPath = function(n, edges, source, destination) {
     while(queue.length){
         let curNode = queue.shift();
         
+        if(curNode === destination) return true;
         if(visited[curNode] === 1) continue;
         
         visited[curNode] = 1;
@@ -32,5 +33,5 @@ var validPath = function(n, edges, source, destination) {
         })
     }
     
-    return temp.includes(destination) ? true : false
+    return false
 };
