@@ -20,7 +20,7 @@ var validPath = function(n, edges, source, destination) {
     queue.push(source)
     
     while(queue.length){
-        let curNode = queue.shift();
+        let curNode = queue.pop();
         
         if(curNode === destination) return true;
         if(visited[curNode] === 1) continue;
