@@ -9,14 +9,14 @@ function solution(X, Y) {
           num[el][1] = num[el][1] + 1 || 1;
     })
     
-    let resultTemp = ""
+    let temp = ""
     num.forEach((el, index) => {
         if(el[0] === 0 || el[1] === 0) return;
         const repeatNum = Math.min(...el);
-        resultTemp += String(index).repeat(repeatNum)
+        temp += String(index).repeat(repeatNum)
     })
     
-    const result = resultTemp.split("").sort((a, b) => b - a).join("");
+    const result = temp.split("").sort((a, b) => b - a).join("");
     if(result[0] === "0") return "0";
     return result.length === 0 ? "-1" : result;
 }
