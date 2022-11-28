@@ -3,20 +3,12 @@ function solution(p) {
     let check = true;
     let result = "";
     
-    if(p.length === 0){
-        return result;
-    }
+    if(p.length === 0) return ""
     
     for(let i = 0; i < p.length; i++){
-        if(p[i] === "("){
-            count++;
-        }else if(p[i] === ")"){
-            count--;
-        }
+        p[i] === "(" ? count++ : count--;
         
-        if(count < 0){
-            check = false;
-        }
+        if(count < 0) check = false;
         
         if(count === 0){
             if(check){
@@ -25,16 +17,11 @@ function solution(p) {
                 
                 return result;
             }else{
-                result += `(${solution(p.slice(i + 1))})`
-                
-                for(let j = 1; j < i; j++){
-                    if(p[j] === "("){
-                        result += ")"
-                    }else if(p[j] === ")"){
-                        result += "("
-                    }
-                }
-                
+                result += "("
+                result += solution(p.slice(i + 1))
+                result += ")"
+                result += p.slice(1, i).split("").map(el => el === "(" ? ")" : "(").join("")
+
                 return result;
             }
             
