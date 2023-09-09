@@ -3,18 +3,19 @@ function solution(n, works) {
         return 0;
     }
 
-    works.sort((a, b) => b - a);
+    works.sort((a, b) => a - b);
+
     while (n > 0) {
-        let i = 0;
-        works[i] -= 1;
+        works[works.length - 1] -= 1;
         n -= 1;
-
-        while (i < works.length - 1 && works[i] < works[i + 1]) {
-          [works[i], works[i + 1]] = [works[i + 1], works[i]];
-          i += 1;
+        
+        let i = works.length - 1;
+        while (i > 0 && works[i] < works[i - 1]) {
+            [works[i], works[i - 1]] = [works[i - 1], works[i]];
+            i -= 1;
         }
-      }
+    }
 
-    let answer = works.reduce((acc, val) => acc + val ** 2, 0);
-    return answer;
+   let answer = works.reduce((acc, val) => acc + val ** 2, 0);
+   return answer;
 }
