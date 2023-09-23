@@ -4,11 +4,11 @@ function solution(numbers) {
 
     const stack = [];
     for (let i = 0; i < n; i++) {
-        while (stack.length > 0 && numbers[i] > numbers[stack.at(-1)]) {
-            const idx = stack.pop();
-            result[idx] = numbers[i];
+        while(stack.length > 0 && numbers[i] > stack.at(-1)[0]){
+            let [num, numIdx] = stack.pop();
+            result[numIdx] = numbers[i];
         }
-        stack.push(i);
+        stack.push([numbers[i], i]);
     }
 
   return result;
