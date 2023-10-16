@@ -1,2 +1,3 @@
-# Algorithm
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+[![Solved.ac 프로필](https://mazassumnida.wtf/api/v2/generate_badge?boj=hxezin)](https://solved.ac/hxezin/)
+
+![mazandi profile](http://mazandi.herokuapp.com/api?handle=hxezin&theme=warm)
